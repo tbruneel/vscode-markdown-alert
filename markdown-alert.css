@@ -1,3 +1,17 @@
+body {
+  max-width: 1012px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
 .markdown-alert {
   --color-note: #0969da;
   --color-tip: #1a7f37;
