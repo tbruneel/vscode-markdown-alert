@@ -4,7 +4,7 @@ Support [GitHub style alerts](https://github.com/orgs/community/discussions/1692
 
 ## Fork Modifications (`tbruneel/vscode-markdown-alert`)
 
-This fork refines [`markdown-alert.css`](markdown-alert.css) for cleaner vertical spacing in VS Code's Markdown preview and standalone HTML/PDF exports (paired with [`tbruneel/markdown-stylesheets`](https://github.com/tbruneel/markdown-stylesheets) and [`tbruneel/vscode-markdown-pdf`](https://github.com/tbruneel/vscode-markdown-pdf)):
+This fork refines [`markdown-alert.css`](markdown-alert.css) for cleaner vertical spacing in VS Code's Markdown preview and standalone HTML/PDF exports (paired with [`tbruneel/vscode-markdown-stylesheets`](https://github.com/tbruneel/vscode-markdown-stylesheets) and [`tbruneel/vscode-markdown-pdf`](https://github.com/tbruneel/vscode-markdown-pdf)):
 
 1. **Tighter Spacing Between Alert Title and Content (`margin-bottom: 6px`):**
    - **Why:** Upstream renders the alert header as `<p class="markdown-alert-title">` without overriding `margin-bottom`, causing it to inherit VS Code's default `p { margin-bottom: 16px; }` and leaving a large gap between the alert title and body text.
