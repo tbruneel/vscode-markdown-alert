@@ -4,11 +4,11 @@ Support [GitHub style alerts](https://github.com/orgs/community/discussions/1692
 
 ## Fork Modifications (`tbruneel/vscode-markdown-alert`)
 
-This fork refines [`markdown-alert.css`](markdown-alert.css) for cleaner vertical spacing and GitHub-compatible page/table geometry in VS Code's built-in Markdown preview (paired with [`tbruneel/vscode-markdown-stylesheets`](https://github.com/tbruneel/vscode-markdown-stylesheets) and [`tbruneel/vscode-markdown-pdf`](https://github.com/tbruneel/vscode-markdown-pdf)):
+This fork refines [`markdown-alert.css`](markdown-alert.css) for cleaner vertical spacing and GitHub-compatible page/table geometry in VS Code's built-in Markdown preview (paired with [`tbruneel/vscode-markdown-stylesheets`](https://github.com/tbruneel/vscode-markdown-stylesheets) and [`tbruneel/vscode-markdown-html`](https://github.com/tbruneel/vscode-markdown-html)):
 
 1. **GitHub-Compatible Page Width & Self-Contained Table Overflow:**
    - **Why:** VS Code's built-in Markdown preview stretches to `100%` of the editor tab width and uses `display: table`, which causes wide tables to overflow the `body` container differently than GitHub.com (`width: 1012px` with `32px` padding).
-   - **What:** Added `body { width: 1012px; margin: 0 auto; padding: 32px; box-sizing: border-box; }` (`948px` inner content width) and `table { display: block; width: max-content; max-width: 100%; overflow: auto; }` so VS Code's live preview renders with the exact same line wrapping, container width, and table scrolling behavior as GitHub.com and `Markdown PDF` exports.
+   - **What:** Added `body { width: 1012px; margin: 0 auto; padding: 32px; box-sizing: border-box; }` (`948px` inner content width) and `table { display: block; width: max-content; max-width: 100%; overflow: auto; }` so VS Code's live preview renders with the exact same line wrapping, container width, and table scrolling behavior as GitHub.com and `.md.html` exports.
 2. **Tighter Spacing Between Alert Title and Content (`margin-bottom: 6px`):**
    - **Why:** Upstream renders the alert header as `<p class="markdown-alert-title">` without overriding `margin-bottom`, causing it to inherit VS Code's default `p { margin-bottom: 16px; }` and leaving a large gap between the alert title and body text.
    - **What:** Added `margin-bottom: 6px;` to `.markdown-alert .markdown-alert-title` for compact spacing between the header and content.
