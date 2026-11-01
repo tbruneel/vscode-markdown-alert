@@ -1,28 +1,25 @@
 {
-  "publisher": "kejun",
+  "publisher": "tbruneel",
   "name": "markdown-alert",
   "displayName": "Markdown Alert",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@8.11.0",
-  "description": "Support GitHub style alerts for VS Code Markdown preview and in notebook powered by markdown-it-github-alerts.",
-  "author": "KeJun <kejun1997@gmail.com>",
+  "description": "Provides support for GitHub Alert callouts in VS Code's live Markdown Preview, with support for automatic theme detection and Markdown stylesheet theme overrides.",
   "license": "MIT",
-  "homepage": "https://github.com/kejunmao/vscode-markdown-alert#readme",
+  "homepage": "https://github.com/tbruneel/vscode-markdown-alert#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kejunmao/vscode-markdown-alert"
+    "url": "https://github.com/tbruneel/vscode-markdown-alert.git"
   },
   "bugs": {
-    "url": "https://github.com/kejunmao/vscode-markdown-alert/issues"
+    "url": "https://github.com/tbruneel/vscode-markdown-alert/issues"
   },
   "categories": [
-    "Other",
-    "Notebooks"
+    "Other"
   ],
   "main": "./dist/index.js",
   "browser": "./dist/web/index.js",
-  "icon": "res/logo.png",
   "files": [
     "dist",
     "markdown-alert.css"
@@ -34,7 +31,7 @@
   "contributes": {
     "notebookRenderer": [
       {
-        "id": "kejun.markdown-it-alert-extension",
+        "id": "tbruneel.markdown-it-alert-extension",
         "displayName": "Markdown it Alert renderer",
         "entrypoint": {
           "extends": "vscode.markdown-it-renderer",
