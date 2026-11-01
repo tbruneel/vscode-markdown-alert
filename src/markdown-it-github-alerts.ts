@@ -73,3 +73,4 @@ export function markdownItGitHubAlerts(md: MarkdownIt, options: GitHubAlertsOpti
     return `<div class="${classPrefix} ${classPrefix}-${type}"><p class="${classPrefix}-title">${icon}${title}</p>`;
   };
 }
+

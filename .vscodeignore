@@ -1,6 +1,7 @@
 src/**
 node_modules/**
 tsconfig.json
+package-lock.json
 .gitignore
 *.vsix
 README.md.html
