@@ -1,11 +1,9 @@
 {
-  "publisher": "tbruneel",
   "name": "markdown-alert",
   "displayName": "Markdown Alert",
-  "version": "1.0.0",
-  "private": true,
-  "packageManager": "pnpm@8.11.0",
   "description": "Provides support for GitHub Alert callouts in VS Code's live Markdown Preview, with support for automatic theme detection and Markdown stylesheet theme overrides.",
+  "version": "1.0.0",
+  "publisher": "tbruneel",
   "license": "MIT",
   "homepage": "https://github.com/tbruneel/vscode-markdown-alert#readme",
   "repository": {
@@ -15,57 +13,30 @@
   "bugs": {
     "url": "https://github.com/tbruneel/vscode-markdown-alert/issues"
   },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
   "categories": [
     "Other"
   ],
-  "main": "./dist/index.js",
-  "browser": "./dist/web/index.js",
-  "files": [
-    "dist",
-    "markdown-alert.css"
-  ],
-  "engines": {
-    "vscode": "^1.77.0"
-  },
   "activationEvents": [],
+  "main": "./dist/extension.js",
   "contributes": {
-    "notebookRenderer": [
-      {
-        "id": "tbruneel.markdown-it-alert-extension",
-        "displayName": "Markdown it Alert renderer",
-        "entrypoint": {
-          "extends": "vscode.markdown-it-renderer",
-          "path": "./dist/notebook.mjs"
-        }
-      }
-    ],
     "markdown.markdownItPlugins": true,
     "markdown.previewStyles": [
-      "./markdown-alert.css"
+      "./styles/markdown-alert.css"
     ]
   },
   "scripts": {
-    "build": "tsup src/notebook.ts --format esm && tsup",
-    "dev": "pnpm build --watch",
-    "lint": "eslint .",
-    "vscode:prepublish": "pnpm build",
-    "publish": "vsce publish --no-dependencies",
-    "pack": "vsce package --no-dependencies",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "release": "bumpp"
+    "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --format=cjs --platform=node --external:vscode",
+    "check": "tsc --noEmit",
+    "watch": "npm run build -- --watch"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.1.2",
-    "@types/markdown-it": "^13.0.7",
-    "@types/node": "^20.10.2",
-    "@types/vscode": "^1.77.0",
-    "@types/vscode-notebook-renderer": "^1.72.3",
-    "@vscode/vsce": "^2.22.0",
-    "bumpp": "^9.2.0",
-    "eslint": "^8.55.0",
-    "markdown-it-github-alerts": "^0.1.2",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.2"
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^25.5.2",
+    "@types/vscode": "^1.80.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^6.0.2"
   }
 }

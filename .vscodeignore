@@ -1,11 +1,6 @@
-src
-node_modules
-test
-.github
-.vscode
-docs
-playground
-eslint.config.js
-tsup.config.ts
-pnpm-lock.yaml
+src/**
+node_modules/**
 tsconfig.json
+.gitignore
+*.vsix
+README.md.html

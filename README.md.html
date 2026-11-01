@@ -1673,7 +1673,7 @@ body.vscode-dark code.language-json .hljs-comment {
 </tbody>
 </table>
 <ul>
-<li><strong>Automatic Theme Detection:</strong> Out of the box, the provided <a href="markdown-alert.css"><code>markdown-alert.css</code></a> applies the GitHub Light palette when VS Code runs in light mode, and automatically switches to the GitHub Dark palette when VS Code runs in dark mode.</li>
+<li><strong>Automatic Theme Detection:</strong> Out of the box, the provided <a href="styles/markdown-alert.css"><code>markdown-alert.css</code></a> applies the GitHub Light palette when VS Code runs in light mode, and automatically switches to the GitHub Dark palette when VS Code runs in dark mode.</li>
 <li><strong>Stylesheet Theme Overrides:</strong> Because colors are driven by the above CSS variables, any stylesheet loaded via <code>&quot;markdown.styles&quot;</code> can override them. When using <a href="https://github.com/tbruneel/vscode-markdown-stylesheets"><code>vscode-markdown-stylesheets</code></a>, setting a custom stylesheet via <code>&quot;markdown-stylesheets.theme&quot;</code> automatically overrides the alert palette so callouts always match the preview background.</li>
 </ul>
 <h2 id="companion-extensions">Companion Extensions</h2>
@@ -1702,10 +1702,11 @@ body.vscode-dark code.language-json .hljs-comment {
 </table>
 <h2 id="building--packaging-from-source">Building &amp; Packaging from Source</h2>
 <pre class="hljs"><code class="language-powershell"><div><span class="hljs-comment"># Install dependencies</span>
-pnpm install
+npm install
 
-<span class="hljs-comment"># Bundle extension into dist/</span>
-pnpm run build
+<span class="hljs-comment"># Run TypeScript typechecking and bundle dist/extension.js via esbuild</span>
+npm run check
+npm run build
 
 <span class="hljs-comment"># Package into a local .vsix archive</span>
 npx @vscode/vsce package <span class="hljs-literal">--no-dependencies</span>

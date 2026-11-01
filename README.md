@@ -60,7 +60,7 @@ Each alert's left border, title text, and icon share a single CSS custom propert
 | `[!WARNING]` | `--color-warning` | `#9a6700` (Amber) | `#d29922` (Amber) |
 | `[!CAUTION]` | `--color-caution` | `#d1242f` (Red) | `#f85149` (Red) |
 
-- **Automatic Theme Detection:** Out of the box, the provided [`markdown-alert.css`](markdown-alert.css) applies the GitHub Light palette when VS Code runs in light mode, and automatically switches to the GitHub Dark palette when VS Code runs in dark mode.
+- **Automatic Theme Detection:** Out of the box, the provided [`markdown-alert.css`](styles/markdown-alert.css) applies the GitHub Light palette when VS Code runs in light mode, and automatically switches to the GitHub Dark palette when VS Code runs in dark mode.
 - **Stylesheet Theme Overrides:** Because colors are driven by the above CSS variables, any stylesheet loaded via `"markdown.styles"` can override them. When using [`vscode-markdown-stylesheets`](https://github.com/tbruneel/vscode-markdown-stylesheets), setting a custom stylesheet via `"markdown-stylesheets.theme"` automatically overrides the alert palette so callouts always match the preview background.
 
 ## Companion Extensions
@@ -77,10 +77,11 @@ This repository is part of a three-extension setup:
 
 ```powershell
 # Install dependencies
-pnpm install
+npm install
 
-# Bundle extension into dist/
-pnpm run build
+# Run TypeScript typechecking and bundle dist/extension.js via esbuild
+npm run check
+npm run build
 
 # Package into a local .vsix archive
 npx @vscode/vsce package --no-dependencies
